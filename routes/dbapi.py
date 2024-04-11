@@ -18,7 +18,7 @@ def getAllUsers():
 def getUserByID(userID):
     return dbapi.getUserByID(userID)
 
-@dbapi_routes.route('/citizenship_id/<citID>', methods=['GET'])
+@dbapi_routes.route('/getAllByCitizenID/<citID>', methods=['GET'])
 # @cross_origin()
 def getUserByCitID(citID):
     return dbapi.getUserByCitID(citID)
