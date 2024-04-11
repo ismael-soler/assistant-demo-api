@@ -1,4 +1,4 @@
 from .dbapi import dbapi_routes
 
-def init_app(app):
+def initApp(app):
     app.register_blueprint(dbapi_routes)

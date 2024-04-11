@@ -1,14 +1,18 @@
 from flask import Flask
+from db_connection import connectToClient
 import os
+from db_connection import connectToClient
 
 environment = os.environ.get('FLASK_ENV')
 
 import routes
 
-def create_app():
+def createApp():
     app = Flask(__name__)
     # Init blueprints
-    routes.init_app(app)
+
+    routes.initApp(app)
+    connectToClient()
     return app
 
 def init(app):
@@ -22,4 +26,4 @@ def init(app):
     # app.run()
 
 if (__name__) == '__main__':
-    init(create_app())
+    init(createApp())

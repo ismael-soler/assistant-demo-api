@@ -7,6 +7,8 @@ name = "pypi"
 flask = "*"
 requests = "*"
 waitress = "*"
+mysql-connector-python = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
