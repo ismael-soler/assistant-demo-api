@@ -1,7 +1,7 @@
 from flask import Flask
-from db_connection import connectToClient
+from app.db_connection import connectToClient
 import os
-from db_connection import connectToClient
+from app.db_connection import connectToClient
 
 environment = os.environ.get('FLASK_ENV')
 
