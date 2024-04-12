@@ -49,4 +49,4 @@ def isIDValid(citID):
     cursor = getClient()
     cursor.execute(f"SELECT 1 FROM myTable WHERE citizenship_id = {citID};")
     result = cursor.fetchall()
-    return jsonify(bool(result))
+    return jsonify({"isValid": bool(result)})
