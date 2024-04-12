@@ -38,3 +38,7 @@ def getDebtByCitizenID(citID):
 def getNameByCitizenID(citID):
     return dbapi.getNameByCitizenID(citID)
 
+@dbapi_routes.route('/isIDValid/<citID>', methods=['GET'])
+# @cross_origin()
+def isIDValid(citID):
+    return dbapi.isIDValid(citID)

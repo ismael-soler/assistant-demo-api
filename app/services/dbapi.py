@@ -1,4 +1,4 @@
-from flask import request
+from flask import request, jsonify
 from db_connection import getClient
 
 def okay():
@@ -23,6 +23,7 @@ def getUserByCitID(citID):
     cursor = getClient()
     cursor.execute(f"SELECT * FROM myTable WHERE citizenship_id = {citID};")
     result = cursor.fetchall()
+    print(type(result))
     return result
 
 def getBalanceByCitizenID(citID):
@@ -43,3 +44,9 @@ def getNameByCitizenID(citID):
     result = cursor.fetchall()[0]
     nameStr = f"{result[0]} {result[1]}"
     return nameStr
+
+def isIDValid(citID):
+    cursor = getClient()
+    cursor.execute(f"SELECT 1 FROM myTable WHERE citizenship_id = {citID};")
+    result = cursor.fetchall()
+    return jsonify(bool(result))
